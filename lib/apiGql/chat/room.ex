@@ -4,7 +4,7 @@ defmodule ApiGql.Chat.Room do
 
   schema "rooms" do
     field :name, :string
-    field :users, :string
+    field :users, {:array, :integer}
 
     timestamps()
   end
@@ -14,6 +14,5 @@ defmodule ApiGql.Chat.Room do
     room
     |> cast(attrs, [:name, :users])
     |> validate_required([:name, :users])
-    |> unique_constraint(:name)
   end
 end

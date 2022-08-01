@@ -3,12 +3,10 @@ defmodule ApiGql.Repo.Migrations.CreateRooms do
 
   def change do
     create table(:rooms) do
-      add :name, :string
-      add :users, :string
+      add :name, :integer
+      add :users, {:array, :integer}
 
       timestamps()
     end
-
-    create unique_index(:rooms, [:name])
   end
 end

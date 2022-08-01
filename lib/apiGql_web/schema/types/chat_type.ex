@@ -4,7 +4,7 @@ defmodule ApiGqlWeb.Schema.Types.ChatType do
   object :chat_type do
     field :id, :string
     field :name, :string
-    field :users, :string
+    field :users, list_of(:integer)
     field :inserted_at, :string
   end
 end
